@@ -2,95 +2,207 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Heiße Singles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOVEFRAUEN ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* PUNTO ONLINE */
-.online-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #00ff00;
-    border-radius: 50%;
-    margin-left: 5px;
-    box-shadow: 0 0 8px #00ff00;
-    animation: pulse 1.5s infinite;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:linear-gradient(
+        -45deg,
+        #0f0f0f,
+        #240046,
+        #5a189a,
+        #ff006e
+    );
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
 }
 
-/* BOTÓN VERDE + VIBRACIÓN */
-.cta-btn {
-    background: linear-gradient(45deg, #00ff00, #39FF14);
-    color: #ffffff;
-    padding: 15px 25px;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 30px;
-    display: inline-block;
-    box-shadow: 0 0 15px rgba(0,255,120,0.8);
-    animation: shake 0.5s infinite;
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-/* VIBRACIÓN */
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    50% { transform: translateX(2px); }
-    75% { transform: translateX(-2px); }
-    100% { transform: translateX(0); }
+.container{
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 0 40px rgba(255,0,110,.4);
 }
+
+.hero-image{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    display:block;
+}
+
+.content{
+    padding:30px;
+    text-align:center;
+    color:white;
+}
+
+.online{
+    color:#39ff14;
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:15px;
+    animation:neonPulse 1.5s infinite;
+    text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #39ff14;
+}
+
+.online::before{
+    content:"🟢 ";
+}
+
+@keyframes neonPulse{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:.6;
+    }
+}
+
+h1{
+    font-size:34px;
+    margin-bottom:15px;
+    text-shadow:
+    0 0 10px #ff006e,
+    0 0 20px #ff006e;
+}
+
+.message{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.register-btn{
+    display:block;
+    text-decoration:none;
+    color:white;
+    font-size:22px;
+    font-weight:800;
+    padding:18px;
+    border-radius:18px;
+
+    background:linear-gradient(
+        45deg,
+        #ff00ff,
+        #00ffff,
+        #39ff14,
+        #ffff00,
+        #ff00ff
+    );
+
+    background-size:400% 400%;
+
+    animation:
+        rainbow 4s linear infinite,
+        bounce 1.2s infinite;
+
+    box-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 40px #00ffff,
+        0 0 60px #39ff14;
+}
+
+@keyframes rainbow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.notice{
+    margin-top:20px;
+    font-size:14px;
+    color:#ddd;
+    line-height:1.5;
+}
+
+.footer{
+    margin-top:15px;
+    font-size:12px;
+    color:#aaa;
+}
+
 </style>
-
 </head>
+<body>
 
-<body style="margin:0; padding:0; background:#000; font-family:Arial, sans-serif; color:#fff; text-align:center;">
+<div class="container">
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td align="center">
+    <!-- ERSETZE DIESES BILD DURCH DEIN EIGENES -->
+    <img
+    src="https://camshowdownload.com/posters/ICO3G5/izzy_xx-MFC-201907110159_poster.jpg"
+    class="hero-image"
+    alt="Frau am Telefon">
 
-<table width="500" cellpadding="10" cellspacing="0" border="0" style="background:#000;">
+    <div class="content">
 
-<!-- IMAGEN -->
-<tr>
-<td align="center">
-<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTWSJaR-Du_pZpOFzEOuFTR99dUNOwplNF5txwrigeRs0MMDIhc" width="100%" style="border-radius:10px;" alt="Dating">
-</td>
-</tr>
+        <div class="online">
+            Jetzt online
+        </div>
 
-<!-- TEXTO -->
-<tr>
-<td align="center" style="font-size:18px; line-height:1.5;">
-🔥 <b style="color:#ff4d4d;">
-Marjorie Schultz ist jetzt online
-<span class="online-dot"></span>
-</b><br><br>
+        <h1>LOVEFRAUEN ❤️</h1>
 
-💋 Registriere dich jetzt kostenlos auf meiner Seite<br>
-und triff mich für ein heißes, diskretes Treffen… 😈
-</td>
-</tr>
+        <div class="message">
+            Registriere dich jetzt auf <b>LOVEFRAUEN</b> und hab Spaß.
+            Ich bin gerade online und freue mich auf deine Nachricht. 💋
+        </div>
 
-<!-- BOTÓN -->
-<tr>
-<td align="center" style="padding:20px;">
-<a href="https://safeoffers.pro/a/0RNGRCmMJNiWkYrI" target="_blank" class="cta-btn">
-💚 JETZT MIT MARJORIE FLIRTEN 😈
-</a>
-</td>
-</tr>
+        <a href="https://clicknlook.site/a/73mP3FZP9OfNYMY" class="register-btn">
+            🔥 JETZT CHATTEN 🔥
+        </a>
 
-</table>
+        <div class="notice">
+            🔞 Nur für Erwachsene ab 18 Jahren.
+            Mit der Registrierung bestätigst du, dass du volljährig bist.
+        </div>
 
-</td>
-</tr>
-</table>
+        <div class="footer">
+            © LOVEFRAUEN • Alle Rechte vorbehalten
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
