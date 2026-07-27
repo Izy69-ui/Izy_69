@@ -1,9 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Vista previa</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -14,23 +14,39 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Poppins,sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
+
     background:#ece5dd;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
     min-height:100vh;
-    padding:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:15px;
+
 }
+
+
+/* CONTENEDOR */
 
 .phone{
 
-    width:400px;
-    max-width:100%;
-    height:760px;
+    width:100%;
+
+    max-width:420px;
+
+    height:90vh;
+
+    max-height:780px;
+
+    min-height:550px;
 
     background:white;
 
@@ -46,6 +62,10 @@ body{
 
 }
 
+
+
+/* HEADER */
+
 .header{
 
     background:#128C7E;
@@ -56,14 +76,18 @@ body{
 
     align-items:center;
 
-    padding:14px;
+    padding:12px 15px;
+
+    flex-shrink:0;
 
 }
 
+
 .avatar{
 
-    width:52px;
-    height:52px;
+    width:50px;
+
+    height:50px;
 
     border-radius:50%;
 
@@ -73,11 +97,13 @@ body{
 
 }
 
+
 .header h2{
 
-    font-size:18px;
+    font-size:17px;
 
 }
+
 
 .status{
 
@@ -87,6 +113,10 @@ body{
 
 }
 
+
+
+/* CHAT */
+
 .chat{
 
     flex:1;
@@ -95,25 +125,37 @@ body{
 
     padding:15px;
 
-    overflow:auto;
+    overflow-y:auto;
+
+    overflow-x:hidden;
 
 }
+
+
 
 .message{
 
-    display:inline-block;
+    display:block;
 
-    max-width:80%;
+    width:max-content;
 
-    padding:11px 15px;
+    max-width:85%;
+
+    padding:10px 14px;
 
     border-radius:16px;
 
-    margin-bottom:15px;
+    margin-bottom:12px;
 
     font-size:15px;
 
+    line-height:1.4;
+
+    word-wrap:break-word;
+
 }
+
+
 
 .left{
 
@@ -121,15 +163,18 @@ body{
 
 }
 
+
 .right{
 
     background:#DCF8C6;
 
-    float:right;
-
-    clear:both;
+    margin-left:auto;
 
 }
+
+
+
+/* BOTON */
 
 .reply{
 
@@ -141,7 +186,13 @@ body{
 
 }
 
+
+
 .reply button{
+
+    width:100%;
+
+    max-width:280px;
 
     background:#25D366;
 
@@ -151,7 +202,7 @@ body{
 
     border-radius:30px;
 
-    padding:12px 25px;
+    padding:14px 20px;
 
     cursor:pointer;
 
@@ -161,27 +212,46 @@ body{
 
 }
 
+
+
+.reply button:active{
+
+    transform:scale(.96);
+
+}
+
+
+
+/* FOTO */
+
 .photo{
 
     display:none;
 
-    margin-top:15px;
+    text-align:center;
 
-    cursor:pointer;
+    margin-top:20px;
 
 }
 
+
 .photo img{
 
-    width:220px;
+    width:100%;
+
+    max-width:230px;
 
     border-radius:15px;
 
     filter:blur(10px);
 
-    transition:.3s;
+    cursor:pointer;
 
 }
+
+
+
+/* MODAL */
 
 .overlay{
 
@@ -199,39 +269,76 @@ body{
 
     padding:20px;
 
+    z-index:99;
+
 }
+
+
 
 .modal{
 
     background:white;
 
-    border-radius:18px;
-
-    max-width:350px;
-
     width:100%;
+
+    max-width:360px;
+
+    border-radius:20px;
 
     padding:25px;
 
     text-align:center;
 
+    animation:zoom .25s ease;
+
 }
 
+
+@keyframes zoom{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+
 .modal h2{
+
+    font-size:22px;
 
     margin-bottom:12px;
 
 }
 
+
+
 .modal p{
 
     color:#555;
+
+    font-size:14px;
 
     line-height:1.5;
 
     margin-bottom:20px;
 
 }
+
+
 
 .modal a{
 
@@ -251,6 +358,10 @@ body{
 
 }
 
+
+
+/* FOOTER */
+
 .footer{
 
     background:#f0f2f5;
@@ -261,7 +372,55 @@ body{
 
     color:#777;
 
-    font-size:13px;
+    font-size:12px;
+
+}
+
+
+
+/* MOVILES PEQUEÑOS */
+
+@media(max-width:380px){
+
+
+.phone{
+
+height:95vh;
+
+border-radius:15px;
+
+}
+
+
+.header h2{
+
+font-size:15px;
+
+}
+
+
+.message{
+
+font-size:14px;
+
+}
+
+
+}
+
+
+
+/* ESCRITORIO */
+
+@media(min-width:768px){
+
+
+.phone{
+
+height:760px;
+
+}
+
 
 }
 
@@ -269,15 +428,19 @@ body{
 
 </head>
 
+
 <body>
+
 
 <div class="phone">
 
+
 <div class="header">
 
+
 <img class="avatar"
-src="https://preview.redd.it/86v0rpuu96e71.jpg?width=640&crop=smart&auto=webp&s=866a1c4b7c3c84f0ac1e0d3a02d235a937b0a6ed"
-alt="Perfil">
+src="https://preview.redd.it/86v0rpuu96e71.jpg?width=640&crop=smart&auto=webp&s=866a1c4b7c3c84f0ac1e0d3a02d235a937b0a6ed">
+
 
 <div>
 
@@ -287,9 +450,13 @@ alt="Perfil">
 
 </div>
 
+
 </div>
 
-<div class="chat" id="chat">
+
+
+<div class="chat">
+
 
 <div class="message left">
 
@@ -297,7 +464,7 @@ alt="Perfil">
 
 </div>
 
-<br>
+
 
 <div class="message left">
 
@@ -305,24 +472,34 @@ Möchtest du mein heißes Foto sehen?
 
 </div>
 
+
+
 <div class="reply">
 
 <button onclick="mostrarFoto()">
-Ja,Vorschau anzeigen
+
+Ja, Vorschau anzeigen
+
 </button>
 
 </div>
 
+
+
 <div class="photo" id="foto">
 
-<img
-onclick="abrirModal()"
-src="https://fapello.com/content/i/z/izzy-xx/1000/izzy-xx_0500_300px.jpg"
-alt="Vista previa">
+
+<img onclick="abrirModal()"
+
+src="https://fapello.com/content/i/z/izzy-xx/1000/izzy-xx_0500_300px.jpg">
+
 
 </div>
 
+
 </div>
+
+
 
 <div class="footer">
 
@@ -330,13 +507,19 @@ Chat nur für Erwachsene ab 18 Jahren
 
 </div>
 
+
 </div>
+
+
 
 <div class="overlay" id="overlay">
 
+
 <div class="modal">
 
+
 <h2>🔓 Zugriff erhalten</h2>
+
 
 <p>
 
@@ -344,17 +527,25 @@ Nur für Erwachsene. Kostenlos registrieren, E-Mail bestätigen und Foto freisch
 
 </p>
 
+
+
 <a href="https://trustedoffers.pro/a/lYlrYTX5NKS1JOl">
 
-registrieren
+Registrieren
 
 </a>
 
-</div>
 
 </div>
+
+
+</div>
+
+
+
 
 <script>
+
 
 function mostrarFoto(){
 
@@ -362,11 +553,15 @@ document.getElementById("foto").style.display="block";
 
 }
 
+
+
 function abrirModal(){
 
 document.getElementById("overlay").style.display="flex";
 
 }
+
+
 
 document.getElementById("overlay").onclick=function(e){
 
@@ -378,8 +573,10 @@ this.style.display="none";
 
 }
 
+
+
 </script>
+
 
 </body>
 </html>
-```
