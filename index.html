@@ -1,11 +1,12 @@
+```html
 <!DOCTYPE html>
-<html lang="de">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOVEFRAUEN ❤️</title>
+<title>Vista previa</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,196 +14,372 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Poppins,sans-serif;
 }
 
 body{
-    min-height:100vh;
+    background:#ece5dd;
     display:flex;
     justify-content:center;
     align-items:center;
+    min-height:100vh;
     padding:20px;
-    background:linear-gradient(
-        -45deg,
-        #0f0f0f,
-        #240046,
-        #5a189a,
-        #ff006e
-    );
-    background-size:400% 400%;
-    animation:bgMove 10s ease infinite;
 }
 
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+.phone{
 
-.container{
-    width:100%;
-    max-width:500px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(12px);
-    border-radius:25px;
+    width:400px;
+    max-width:100%;
+    height:760px;
+
+    background:white;
+
+    border-radius:22px;
+
     overflow:hidden;
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:0 0 40px rgba(255,0,110,.4);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
-.hero-image{
-    width:100%;
-    height:360px;
-    object-fit:cover;
-    display:block;
-}
+.header{
 
-.content{
-    padding:30px;
-    text-align:center;
+    background:#128C7E;
+
     color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:14px;
+
 }
 
-.online{
-    color:#39ff14;
-    font-size:20px;
-    font-weight:700;
-    margin-bottom:15px;
-    animation:neonPulse 1.5s infinite;
-    text-shadow:
-    0 0 5px #39ff14,
-    0 0 10px #39ff14,
-    0 0 20px #39ff14,
-    0 0 40px #39ff14;
+.avatar{
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-right:12px;
+
 }
 
-.online::before{
-    content:"🟢 ";
+.header h2{
+
+    font-size:18px;
+
 }
 
-@keyframes neonPulse{
-    0%,100%{
-        opacity:1;
-    }
-    50%{
-        opacity:.6;
-    }
+.status{
+
+    font-size:13px;
+
+    opacity:.9;
+
 }
 
-h1{
-    font-size:34px;
-    margin-bottom:15px;
-    text-shadow:
-    0 0 10px #ff006e,
-    0 0 20px #ff006e;
+.chat{
+
+    flex:1;
+
+    background:#efeae2;
+
+    padding:15px;
+
+    overflow:auto;
+
 }
 
 .message{
-    font-size:20px;
-    line-height:1.6;
-    margin-bottom:30px;
+
+    display:inline-block;
+
+    max-width:80%;
+
+    padding:11px 15px;
+
+    border-radius:16px;
+
+    margin-bottom:15px;
+
+    font-size:15px;
+
 }
 
-.register-btn{
-    display:block;
-    text-decoration:none;
+.left{
+
+    background:white;
+
+}
+
+.right{
+
+    background:#DCF8C6;
+
+    float:right;
+
+    clear:both;
+
+}
+
+.reply{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:10px;
+
+}
+
+.reply button{
+
+    background:#25D366;
+
     color:white;
-    font-size:22px;
-    font-weight:800;
-    padding:18px;
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:12px 25px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    font-size:15px;
+
+}
+
+.photo{
+
+    display:none;
+
+    margin-top:15px;
+
+    cursor:pointer;
+
+}
+
+.photo img{
+
+    width:220px;
+
+    border-radius:15px;
+
+    filter:blur(10px);
+
+    transition:.3s;
+
+}
+
+.overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.modal{
+
+    background:white;
+
     border-radius:18px;
 
-    background:linear-gradient(
-        45deg,
-        #ff00ff,
-        #00ffff,
-        #39ff14,
-        #ffff00,
-        #ff00ff
-    );
+    max-width:350px;
 
-    background-size:400% 400%;
+    width:100%;
 
-    animation:
-        rainbow 4s linear infinite,
-        bounce 1.2s infinite;
+    padding:25px;
 
-    box-shadow:
-        0 0 10px #ff00ff,
-        0 0 20px #ff00ff,
-        0 0 40px #00ffff,
-        0 0 60px #39ff14;
+    text-align:center;
+
 }
 
-@keyframes rainbow{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+.modal h2{
+
+    margin-bottom:12px;
+
 }
 
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-}
+.modal p{
 
-.notice{
-    margin-top:20px;
-    font-size:14px;
-    color:#ddd;
+    color:#555;
+
     line-height:1.5;
+
+    margin-bottom:20px;
+
+}
+
+.modal a{
+
+    display:block;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
 }
 
 .footer{
-    margin-top:15px;
-    font-size:12px;
-    color:#aaa;
+
+    background:#f0f2f5;
+
+    padding:12px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:13px;
+
 }
 
 </style>
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="phone">
 
-    <!-- ERSETZE DIESES BILD DURCH DEIN EIGENES -->
-    <img
-    src="https://camstreams.tv/contents/videos_screenshots/5000/5484/preview.mp4.jpg"
-    class="hero-image"
-    alt="Frau am Telefon">
+<div class="header">
 
-    <div class="content">
+<img class="avatar"
+src="https://preview.redd.it/86v0rpuu96e71.jpg?width=640&crop=smart&auto=webp&s=866a1c4b7c3c84f0ac1e0d3a02d235a937b0a6ed"
+alt="Perfil">
 
-        <div class="online">
-            Jetzt online
-        </div>
+<div>
 
-        <h1>Sexpartnercommunity - DE ❤️</h1>
+<h2>Marjorie Schultz</h2>
 
-        <div class="message">
-            Registriere dich jetzt auf <b>Sexpartnercommunity - DE</b> und hab Spaß.
-            Ich bin gerade online und freue mich auf deine Nachricht. 💋
-        </div>
-
-        <a href="https://trustedoffers.pro/a/lYlrYTX5NKS1JOl" class="register-btn">
-            JETZT CHATTEN 🔥
-        </a>
-
-        <div class="notice">
-            🔞 Nur für Erwachsene ab 18 Jahren.
-            Mit der Registrierung bestätigst du, dass du volljährig bist.
-        </div>
-
-        <div class="footer">
-            © Sexpartnercommunity - DE • Alle Rechte vorbehalten
-        </div>
-
-    </div>
+<div class="status">online</div>
 
 </div>
 
+</div>
+
+<div class="chat" id="chat">
+
+<div class="message left">
+
+👋 Hallo Baby.
+
+</div>
+
+<br>
+
+<div class="message left">
+
+Möchtest du mein heißes Foto sehen?
+
+</div>
+
+<div class="reply">
+
+<button onclick="mostrarFoto()">
+Ja,Vorschau anzeigen
+</button>
+
+</div>
+
+<div class="photo" id="foto">
+
+<img
+onclick="abrirModal()"
+src="https://fapello.com/content/i/z/izzy-xx/1000/izzy-xx_0500_300px.jpg"
+alt="Vista previa">
+
+</div>
+
+</div>
+
+<div class="footer">
+
+Chat nur für Erwachsene ab 18 Jahren
+
+</div>
+
+</div>
+
+<div class="overlay" id="overlay">
+
+<div class="modal">
+
+<h2>🔓 Zugriff erhalten</h2>
+
+<p>
+
+Nur für Erwachsene. Kostenlos registrieren, E-Mail bestätigen und Foto freischalten.
+
+</p>
+
+<a href="https://trustedoffers.pro/a/lYlrYTX5NKS1JOl">
+
+registrieren
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function mostrarFoto(){
+
+document.getElementById("foto").style.display="block";
+
+}
+
+function abrirModal(){
+
+document.getElementById("overlay").style.display="flex";
+
+}
+
+document.getElementById("overlay").onclick=function(e){
+
+if(e.target===this){
+
+this.style.display="none";
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
+```
